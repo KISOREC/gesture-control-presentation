@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Gesture Slides Controller",
+  "version": "1.3.9",
+  "description": "Control Google Slides with hand gestures detected locally by your camera.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "offscreen",
+    "scripting",
+    "debugger",
+    "tabs",
+    "storage"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
+  "host_permissions": [
+    "https://docs.google.com/presentation/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Open Gesture Slides Controller",
+    "default_popup": "dashboard.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/presentation/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "gesture-slides-extension",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.1.1"
+  },
+  "devDependencies": {
+    "vite": "6.4.5"
+  }
+}
